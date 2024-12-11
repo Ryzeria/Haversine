@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <!-- Menonaktifkan skala yang tidak diinginkan -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Judul halaman web -->
+    <title>Kalkulator Jarak Geografis</title>
+    <!-- Link CSS Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- Link CSS easy button -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <!-- Link Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">    
+    <!-- Link CSS utama -->
+     <link rel="stylesheet" href="styles/style.css">
+
+  </head>
+  <body>
+    <!-- Tambahkan judul peta dengan logo -->
+    <div id="title">
+      <img src="img/logo.png" alt="Logo" id="logo">
+      Kalkulator Jarak Geografis
+    </div>
+
+    <!-- Kontainer untuk peta -->
+    <div id="map"></div>
+
+    <!-- Kotak informasi -->
+    <div id="infoBox">
+      <h2>Informasi</h2>
+      <p> 👨‍🏫 WebGIS dikembangkan oleh <a href='https://www.linkedin.com/in/achmad-fahriza-b391b51bb/'>Achmad Fahriza</a> (<a href = 'https://www.its.ac.id/tgeomatika/id/beranda/'>Teknik Geomatika | Institut Teknologi Sepuluh Nopember (ITS)</a>).</p>
+
+      <p> 📦 Proyek ini dihosting di <a href="haversine.vercel.app"> aplikasi ini.</a></p>
+    </div>
+
+    <!-- Tombol untuk mendapatkan lokasi perangkat -->
+     <div id="gpsButton"></div>
+
+    <!-- Kontainer untuk aplikasi web penghitungan jarak -->
+    <div class="container">
+      <div class="input-table">
+        <div class="input-group">
+          <label for="latA">Titik A</label>
+          <input type="text" id="latA" placeholder="Garis Lintang" />
+          <input type="text" id="lonA" placeholder="Garis Bujur" />
+        </div>
+        <div class="input-group">
+          <label for="latB">Titik B</label>
+          <input type="text" id="latB" placeholder="Garis Lintang" />
+          <input type="text" id="lonB" placeholder="Garis Bujur" />
+        </div>
+      </div>
+      <hr />
+      <input type="submit" id="submit" value="Hitung Jarak" />
+      <br />
+      <div id="result">
+        <label>Jarak (km):</label>
+        <h1 id="output">0</h1>
+      </div>
+    </div>
+
+    <!-- Informasi koordinat -->
+    <div id="coordInfo">Lintang: , Bujur: </div>
+
+    <!-- Link JavaScript Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Link JavaScript Easy Button -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <!-- Link jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link JavaScript Utama -->
+    <script src="scripts/main.js"></script>
+    <!-- Link JavaScript Fungsi Marker -->
+     <script src="scripts/marker.js"></script>
+    <!-- Link JavaScript Menggambar Garis -->
+     <script src="scripts/drawLine.js"></script>
+    <!-- Link JavaScript Menghitung Jarak -->
+     <script src="scripts/getDistance.js"></script>
+    <!-- Link JavaScript Mendapatkan Lokasi Perangkat -->
+     <script src="scripts/getLocation.js"></script>
+  </body>
+</html>
